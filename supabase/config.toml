@@ -1,0 +1,4 @@
+project_id = "chonk"
+
+[functions.chonk-sheet]
+verify_jwt = false
