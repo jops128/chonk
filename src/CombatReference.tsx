@@ -6,6 +6,11 @@ type Feature = Character['features'][number];
 export default function CombatReference({ character: c }: { character: Character }) {
   const reminders = [
     {
+      id: 'gwm', icon: Axe, timing: 'ATTACK ACTION · YOUR TURN',
+      formula: `+${c.proficiency} damage with Heavy weapons`,
+      text: 'Add your proficiency bonus on Heavy-weapon hits made as part of the Attack action on your turn. Hew: immediately after a melee critical hit or reducing a creature to 0 HP, you may attack with the same weapon as a bonus action. Hew does not gain this damage bonus.',
+    },
+    {
       id: 'divine', icon: Sparkles, timing: 'FIRST HIT · YOUR TURN',
       formula: `+1d6 + ${Math.floor(c.profile.level / 2)}`,
       text: 'While raging, add this to the first creature you hit on your turn with a weapon or unarmed strike. Choose radiant or necrotic.',
@@ -49,7 +54,7 @@ export default function CombatReference({ character: c }: { character: Character
     },
   ];
   const available = reminders.flatMap(reminder => {
-    const feature = c.features.find(f => f.id === reminder.id);
+    const feature = c.features.find(f => f.id === reminder.id || (reminder.id === 'gwm' && f.name.toLowerCase() === 'great weapon master'));
     return feature ? [{ ...reminder, feature }] : [];
   });
   if (!available.length) return null;

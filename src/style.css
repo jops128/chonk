@@ -80,7 +80,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { appearance:
 .section-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 17px; }
 .section-title > span { color: var(--muted); font-size: 8px; letter-spacing: 1px; }
 .attacks-section { margin-top: 32px; }
-.attack-card { display: flex; align-items: center; gap: 13px; padding: 18px 15px; margin-bottom: 10px; position: relative; }
+.attack-card { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; padding: 18px 15px; margin-bottom: 10px; position: relative; }
+.weapon-damage-breakdown { flex-basis: 100%; border-top: 1px solid var(--border); padding-top: 12px; }
+.weapon-damage-breakdown > div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.weapon-damage-breakdown span { font-size: 11px; color: #b8c5b8; line-height: 1.6; }
+.weapon-damage-breakdown strong { font-size: 14px; white-space: nowrap; color: var(--gold); }
+.weapon-damage-breakdown p { font-size: 11px; line-height: 1.8; color: var(--muted); }
 .weapon-icon { width: 43px; height: 46px; background: #2b2c28; border: 1px solid #494839; border-radius: 8px; color: var(--gold); display: grid; place-items: center; flex-shrink: 0; }
 .attack-info { min-width: 0; flex: 1; }
 .attack-info p { font-size: 10px; color: var(--muted); margin: 5px 0 7px; line-height: 1.5; }
