@@ -85,12 +85,13 @@ export class SheetStore {
         this.emit({ status: 'conflict', remote, error: 'Another device changed the sheet. Choose which version to keep.' });
         return;
       }
+      if (!pending && !this.record.pending && remote.revision !== this.record.snapshot?.revision) this.record.undo = null;
       this.record.snapshot = remote;
       // Preserve edits made while this network request was in flight.
       if (pending && this.record.pending?.writeId === pending.writeId) this.record.pending = null;
       else if (this.record.pending) this.record.pending.expectedRevision = remote.revision;
       await this.persist();
-      this.emit({ character: this.record.pending?.data ?? remote.data, status: this.record.pending ? 'pending' : 'saved', updatedAt: remote.updated_at, error: '' });
+      this.emit({ character: this.record.pending?.data ?? remote.data, status: this.record.pending ? 'pending' : 'saved', updatedAt: remote.updated_at, error: '', hasUndo: !!this.record.undo });
     } catch (error) {
       if (this.getSnapshot().status !== 'conflict') this.emit({ status: navigator.onLine ? 'failed' : 'offline', error: error instanceof Error ? error.message : 'Unable to reach the cloud. Your local changes are kept.' });
     } finally {

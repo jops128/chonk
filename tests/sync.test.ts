@@ -24,6 +24,15 @@ beforeEach(() => {
   }));
 });
 describe('cloud and offline persistence', () => {
+  it('clears stale undo history when another device saves newer changes', async () => {
+    const a = new SheetStore('token', 'https://example.test'); await a.start();
+    await a.change(c => { c.combat.hp = 15; return c; }); await a.sync();
+    expect(a.getSnapshot().hasUndo).toBe(true);
+    cloud.revision++; cloud.data.combat.hp = 10;
+    await a.sync();
+    expect(a.getSnapshot().hasUndo).toBe(false);
+    await a.undo(); expect(a.getSnapshot().character?.combat.hp).toBe(10); a.dispose();
+  });
   it('keeps offline edits through reopening and syncs on reconnection', async () => {
     const a = new SheetStore('token', 'https://example.test'); await a.start();
     navigator.onLine = false;
