@@ -94,6 +94,24 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { appearance:
 .combat-reminder strong { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
 .combat-reminder span { font-size: 11px; color: var(--muted); line-height: 1.8; }
 .combat-reminder.raging strong { color: #e9ae84; }
+.combat-reference { margin-top: 12px; }
+.combat-ability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; align-items: start; }
+.combat-ability { min-width: 0; padding: 17px; }
+.combat-ability-title { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--gold); }
+.combat-ability-title h3 { color: #e3e5dc; font-size: 12px; }
+.combat-ability-title > svg { flex-shrink: 0; }
+.rage-label { font-size: 8px; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 3px 5px; }
+.rage-label.active { color: #edbd99; border-color: #886246; background: #493326; }
+.combat-ability.rage-ready { border-color: #8f704c; }
+.combat-ability-formula { margin-top: 12px; color: var(--gold); font-size: 13px; font-weight: 600; }
+.combat-ability-copy { font-size: 11px; line-height: 1.8; color: #b8c5b8; margin-top: 7px; }
+.combat-ability-timing { display: block; margin-top: 12px; font-size: 7px; letter-spacing: .8px; color: var(--muted); }
+.combat-full-note { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 9px; }
+.combat-full-note summary { cursor: pointer; color: #a9b9a7; font-size: 10px; min-height: 26px; display: flex; align-items: center; gap: 6px; }
+.combat-full-note summary::before { content: '+'; color: var(--gold); }
+.combat-full-note[open] summary::before { content: '−'; }
+.combat-full-note summary::-webkit-details-marker { display: none; }
+.combat-full-note p { margin-top: 5px; color: #b8c5b8; font-size: 11px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .resources-section .section-title { padding-top: 1px; }
 .resource-card { padding: 15px 17px 13px; margin-bottom: 10px; }
 .resource-heading { display: flex; align-items: center; gap: 9px; color: var(--gold); }
@@ -242,6 +260,14 @@ dialog::backdrop { background: #080e10c7; backdrop-filter: blur(4px); }
   .quick-stats { gap: 10px; margin-top: 12px; } .quick-stat { padding-top: 17px; padding-bottom: 16px; gap: 10px; } .quick-stat > span { font-size: 7px; letter-spacing: .8px; } .quick-stat strong { font-size: 26px; } .quick-stat > svg { width: 17px; }
   .section-title { margin-bottom: 14px; } h2 { font-size: 16px; } .section-title > span { font-size: 7px; } .attacks-section { margin-top: 26px; } .attack-card { padding: 17px 14px; gap: 11px; } .weapon-icon { display: grid; width: 36px; height: 40px; } .weapon-icon svg { width: 19px; } .attack-info p { font-size: 8px; } .attack-values { gap: 13px; padding-right: 12px; } .attack-values strong { font-size: 14px; } .attack-values > div:first-child strong { font-size: 19px; } .attack-values span { font-size: 6px; letter-spacing: .7px; } .attack-edit { width: 26px; height: 33px; } .attack-edit svg { width: 11px; } .combat-reminder { padding: 15px 1px 0; } .combat-reminder span { font-size: 10px; }
   .resource-card { padding: 18px; } .resource-heading h3 { font-size: 13px; } .resource-formula { font-size: 11px; } .resource-use { min-height: 44px; padding: 8px 13px; font-size: 12px; } .resource-count > span { width: 12px; height: 12px; margin-right: 2px; } .resource-count > small { font-size: 12px; margin-left: 6px; } .reset-caption { font-size: 9px; }
+  .combat-reference { margin-top: 24px; }
+  .combat-ability-grid { grid-template-columns: 1fr; }
+  .combat-ability { padding: 18px; }
+  .combat-ability-title h3 { font-size: 13px; }
+  .combat-ability-formula { font-size: 15px; }
+  .combat-ability-copy { font-size: 12px; }
+  .combat-ability-timing { font-size: 8px; }
+  .combat-full-note summary { min-height: 44px; font-size: 11px; }
   .resource-heading .icon-button { width: 44px; height: 44px; margin: -10px -10px -10px 0; } .section-label > .icon-button { width: 44px; height: 44px; margin: -15px -11px -15px 0; } .attack-edit { width: 44px; height: 44px; right: -10px; top: -4px; }
   .inspiration-card { padding: 19px; } .inspiration-card strong { font-size: 13px; } .inspiration-card small { font-size: 10px; } .rest-buttons { gap: 11px; } .rest-buttons .button { min-height: 46px; font-size: 12px; }
   .sheet-footer { margin-top: 25px; padding: 12px 0; } .sheet-footer > span { font-size: 7px; letter-spacing: 1px; } .text-button { min-height: 44px; }
