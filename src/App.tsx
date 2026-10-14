@@ -54,6 +54,12 @@ function Landing({ open }: { open: (token: string, demo?: boolean) => void }) {
 }
 export default function App() {
   const [token, setToken] = useState(getToken); const [demo, setDemo] = useState(false);
+  // The installed app opens at the manifest start URL, without the fragment.
+  useEffect(() => {
+    if (tokenPattern.test(token)) {
+      try { localStorage.setItem('chonk-link', token); } catch { /* The full URL still works. */ }
+    }
+  }, [token]);
   function open(key: string, demoMode = false) {
     if (!demoMode) { localStorage.setItem('chonk-link', key); history.replaceState(null, '', `${location.pathname}#key=${key}`); }
     setDemo(demoMode); setToken(key);
