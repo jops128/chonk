@@ -2,7 +2,7 @@
 
 :root { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: #edece5; background: #121719; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --gold: #d2b582; --muted: #9baba9; --border: #303b3b; --card: #1a2224; }
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; }
+body { margin: 0; min-width: 0; }
 button, input, textarea { font: inherit; }
 button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; color: inherit; }
@@ -235,9 +235,9 @@ dialog::backdrop { background: #080e10c7; backdrop-filter: blur(4px); }
   .app-shell { max-width: 490px; padding: 0 20px 90px; }
   .app-header { height: 73px; } .brand { font-size: 12px; gap: 10px; letter-spacing: 2.5px; } .emblem { width: 31px; height: 35px; } .brand-sub { font-size: 6px; letter-spacing: 1.3px; } .edition { font-size: 8px; padding: 6px 8px; letter-spacing: .8px; } .header-right { gap: 5px; }
   .character-heading { padding: 27px 0 25px; position: relative; } .character-heading h1 { font-size: 38px; margin-top: 7px; letter-spacing: -1.5px; } .character-subtitle { font-size: 11px; } .character-subtitle span { padding: 0 4px; } .eyebrow { font-size: 8px; letter-spacing: 1.1px; } .eyebrow span { padding: 0 2px; }
-  .sync-status { position: absolute; right: 0; top: 51px; margin: 0; font-size: 9px; gap: 5px; } .sync-status svg { width: 11px; } .character-heading h1 .heading-edit { margin-left: 1px; } .heading-edit { width: 30px; }
+  .sync-status { position: absolute; right: 0; top: 51px; margin: 0; font-size: 9px; gap: 5px; } .sync-status svg { width: 11px; } .character-heading h1 .heading-edit { margin-left: 1px; } .heading-edit { width: 44px; }
   .desktop-tabs { display: none; } .combat-grid { display: flex; flex-direction: column; gap: 23px; } .combat-main, .combat-side { width: 100%; }
-  .hp-card { padding: 21px; } .hp-body { padding: 21px 0 22px; } .hp-number strong { font-size: 68px; } .hp-number > span { font-size: 19px; } .hp-caption > span { font-size: 8px; letter-spacing: .9px; } .hp-caption { gap: 15px; } .temp-pill { font-size: 9px; min-height: 34px; padding: 0 7px; }
+  .hp-card { padding: 21px; } .hp-body { padding: 21px 0 22px; } .hp-number strong { font-size: 68px; } .hp-number > span { font-size: 19px; } .hp-caption > span { font-size: 8px; letter-spacing: .9px; } .hp-caption { gap: 15px; } .temp-pill { font-size: 9px; min-height: 44px; padding: 0 7px; }
   .hp-actions { gap: 10px; margin-top: 20px; } .hp-actions .button { min-height: 47px; font-size: 12px; padding: 12px 8px; }
   .quick-stats { gap: 10px; margin-top: 12px; } .quick-stat { padding-top: 17px; padding-bottom: 16px; gap: 10px; } .quick-stat > span { font-size: 7px; letter-spacing: .8px; } .quick-stat strong { font-size: 26px; } .quick-stat > svg { width: 17px; }
   .section-title { margin-bottom: 14px; } h2 { font-size: 16px; } .section-title > span { font-size: 7px; } .attacks-section { margin-top: 26px; } .attack-card { padding: 17px 14px; gap: 11px; } .weapon-icon { display: grid; width: 36px; height: 40px; } .weapon-icon svg { width: 19px; } .attack-info p { font-size: 8px; } .attack-values { gap: 13px; padding-right: 12px; } .attack-values strong { font-size: 14px; } .attack-values > div:first-child strong { font-size: 19px; } .attack-values span { font-size: 6px; letter-spacing: .7px; } .attack-edit { width: 26px; height: 33px; } .attack-edit svg { width: 11px; } .combat-reminder { padding: 15px 1px 0; } .combat-reminder span { font-size: 10px; }
@@ -251,7 +251,7 @@ dialog::backdrop { background: #080e10c7; backdrop-filter: blur(4px); }
   .ability-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; } .ability-card { padding: 18px 5px; } .ability-card > span { font-size: 10px; } .ability-card > strong { font-size: 29px; }
   .stats-columns { grid-template-columns: 1fr; gap: 17px; } .stat-list { padding: 20px; } .stat-row { min-height: 48px; font-size: 12px; }
   .features-grid { grid-template-columns: 1fr; } .feature-card summary { padding: 17px; } .page-intro { font-size: 12px; }
-  .item-card { padding: 13px 11px; gap: 9px; } .item-icon { display: none; } .item-info strong { font-size: 11px; } .quantity-controls { flex-shrink: 0; } .quantity-controls button { width: 32px; height: 44px; } .quantity-controls span { min-width: 18px; font-size: 11px; } .item-card > .icon-button { width: 32px; } .review-badge { margin-left: 0; display: table; font-size: 7px; } .search-field input { font-size: 11px; } .search-field { margin-top: 18px; }
+  .item-card { padding: 13px 11px; gap: 9px; } .item-icon { display: none; } .item-info strong { font-size: 11px; } .quantity-controls { flex-shrink: 0; } .quantity-controls button { width: 44px; height: 44px; } .quantity-controls span { min-width: 18px; font-size: 11px; } .item-card > .icon-button { width: 44px; } .review-badge { margin-left: 0; display: table; font-size: 7px; } .search-field input { font-size: 11px; } .search-field { margin-top: 18px; }
   .dialog-inner { padding: 21px; } .dialog-head h2 { font-size: 20px; } .dialog-copy { font-size: 12px; } dialog { max-height: calc(100dvh - 36px); }
   .landing { padding: 0 23px; } .landing-content { margin-top: 40px; } .landing h1 { font-size: 34px; } .landing-top { height: 78px; } .landing-description { font-size: 12px; } .landing-note { font-size: 9px; }
 }

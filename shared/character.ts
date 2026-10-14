@@ -40,9 +40,12 @@ export type Snapshot = { data: Character; revision: number; updated_at: string; 
 export const saveSchema = z.object({ data: characterSchema, expectedRevision: count, writeId: z.uuid() });
 export function abilityMod(score: number) { return Math.floor((score - 10) / 2); }
 export function signed(value: number) { return value >= 0 ? `+${value}` : String(value); }
+export function usesPrimalStrength(c: Character, name: Skill, primal = false) {
+  return primal && c.combat.rage && ['Acrobatics', 'Intimidation', 'Perception', 'Stealth', 'Survival'].includes(name);
+}
 export function skillMod(c: Character, name: Skill, primal = false) {
   const skill = c.skills.find(s => s.name === name)!;
-  const useStrength = primal && c.combat.rage && ['Acrobatics', 'Intimidation', 'Perception', 'Stealth', 'Survival'].includes(name);
+  const useStrength = usesPrimalStrength(c, name, primal);
   return !useStrength && skill.override !== null ? skill.override : abilityMod(c.scores[useStrength ? 'str' : skillAbilities[name]]) + (skill.proficient ? c.proficiency : 0);
 }
 export function saveMod(c: Character, ability: Ability) {
